@@ -1,0 +1,58 @@
+The current mysql database is layed out as follows:
+
+Databases:
+gynax
+test
+
+Tables:
+gynax - items
+gynax - orders
+gynax - piprices
+gynax - towers
+test - typeid
+
+Descriptions:
+
+items - this table holds all the items that are to be catalogued and also helps to govern when prices will be updated
+Field	| Type
+--------------------
+name	| varchar(30)
+doupdate| int(11)
+--------------------
+Used by files: gynax.py, update.php
+
+
+orders - this table keeps all the submitted quotes
+Field		| Type
+------------------------------
+orderno		| int(5)
+quotedate	| datetime
+stuff		| varchar(30)
+quantity	| int(10)
+qvalue		| float(12,2)
+tower		| varchar(20)
+location	| varchar(100)
+acceptdate	| datetime
+completed	| datetime
+notes		| varchar(200)
+charname	| varchar(20)
+-----------------------------
+Used by: records.php, submitorder.php
+
+piprices - holds most recent prices for goods
+Field		| Type
+-------------------------------
+typeID		| int(10)
+typeNAME	| varchar(30)
+min		| float
+max		| float
+lastupdate	| datetime
+-------------------------------
+Used by: gynax.php, gynax.py, quote.php
+
+towers - list of towers currently in Caprica
+Field		| Type
+------------------------------
+name		| varchar(20)
+------------------------------
+Used by: quote.php, records.php
