@@ -1,1 +1,8 @@
-test test
+Descriptions of files:
+
+gynax.php - this is the main page which includes a display of all the products in the database, allows for users to start generating quotes, as well as access the records
+quote.php - page takes get info from homepage and combines with database prices to create a quote. Page allows users to insert info about where the products are
+records.php - allows for viewing and updating of orders that users have placed. Currently, orders can only be accepted and completed, all other changes must be made on the database backend
+submitorder.php - landing page that pushes orders into the database after users have submitted
+update.php - small page that triggers python script to update all prices
+gynax.py - python script that pulls items from database and updates prices from eve-central and pushes that into the database
