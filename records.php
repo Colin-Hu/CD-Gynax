@@ -6,7 +6,7 @@ $code = 22805;
 $ordernoup="";
 if ($_POST["password"]==$code OR $_GET["update"]==1)
 {
-$con=mysqli_connect("localhost","gynax","","gynax");
+$con=mysqli_connect("localhost","webbot","","planetary_interaction");
 $towers=array();
 $characters=array();
 $result = mysqli_query($con, "SELECT DISTINCT tower FROM orders");
