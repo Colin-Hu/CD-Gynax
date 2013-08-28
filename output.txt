@@ -1,0 +1,66 @@
+Enriched Uranium	1
+Supertensile Plastics	1
+Oxides	1
+Test Cultures	1
+Polyaramids	1
+Microfiber Shielding	1
+Water-Cooled CPU	1
+Biocells	1
+Condensates	1
+Camera Drones	1
+Synthetic Synapses	1
+Gel-Matrix Biopaste	1
+Supercomputers	1
+Smartfab Units	1
+Nuclear Reactors	1
+Neocoms	1
+Biotech Research Reports	1
+Industrial Explosives	1
+Hermetic Membranes	1
+Hazmat Detection Systems	1
+Cryoprotectant Solution	1
+Plasmoids	1
+Electrolytes	1
+Oxidizing Compound	1
+Bacteria	1
+Proteins	1
+Biofuels	1
+Industrial Fibers	1
+Reactive Metals	1
+Precious Metals	1
+Toxic Metals	1
+Chiral Structures	1
+Nanites	1
+Broadcast Node	1
+Integrity Response Drones	1
+Nano-Factory	1
+Organic Mortar Applicators	1
+Recursive Computing Module	1
+Self-Harmonizing Power Core	1
+Sterile Conduits	1
+Wetware Mainframe	1
+Mechanical Parts	1
+Synthetic Oil	1
+Fertilizer	1
+Polytextiles	1
+Silicate Glass	1
+Livestock	1
+Viral Agent	1
+Biomass	1
+Construction Blocks	1
+Silicon	1
+Rocket Fuel	1
+Coolant	1
+Guidance Systems	1
+Consumer Electronics	1
+Superconductors	1
+Transmitter	1
+Miniature Electronics	1
+Planetary Vehicles	1
+Robotics	1
+Transcranial Microcontrollers	1
+Genetically Enhanced Livestock	1
+Ukomi Superconductors	1
+Data Chips	1
+High-Tech Transmitters	1
+Vaccines	1
