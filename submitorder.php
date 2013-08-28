@@ -5,7 +5,7 @@
 <?php
 echo "Your order has been submitted for processing. Please do not refresh this page to avoid double submitting.<br>";
 #echo $_POST["item1"] . " " . $_POST["item2"] . " " . $_POST["item3"];
-$con=mysqli_connect("localhost","gynax","","gynax");
+$con=mysqli_connect("localhost","webbot","","planetary_interaction");
 $stmt = mysqli_prepare($con, "INSERT INTO orders VALUES (?,now(),?,?,?,?,?,'',0,?,?)");
 mysqli_stmt_bind_param($stmt, 'ssssssss', $orderno, $stuff, $quantity, $qvalue, $tower, $location, $notes, $charname);
 $result=mysqli_query($con,"SELECT max(orderno) AS max FROM orders");

@@ -1,10 +1,10 @@
 <!DOTYPE html>
 <html>
-<body onload="CCPEVE.requestTrust('http://evetest.no-ip.org')">
+<body onload="CCPEVE.requestTrust('http://y790.org')">
 
 <?php
 echo '<div style="width:400px;float:left;">';
-$con=mysqli_connect("localhost","gynax","","gynax");
+$con=mysqli_connect("localhost","webbot","","planetary_interaction");
 $total = 0;
 echo "<table border = '1'>";
 echo "<tr>";
