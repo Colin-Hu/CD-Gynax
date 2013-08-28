@@ -16,7 +16,7 @@ $items=array();
 $result = mysqli_query($con, "SELECT * FROM piprices");
 echo '<div>';
 echo '<div style="width:500px;float:left;">';
-echo 'Prices are only from Amarr <br> Gynax Price is 90% Buy <br>';
+echo 'Prices are only from Jita <br> Gynax Price is 90% Buy <br>';
 echo '<table border="1">';
 echo '<tr><td>Item ID</td><td>Item Name</td><td>Sell</td><td>Buy</td><td>Gynax Price</td></tr>';
 while($row = mysqli_fetch_array($result))

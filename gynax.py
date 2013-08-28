@@ -15,7 +15,7 @@ import time
 def idsqlpull(typeName):
     #Pulls the id numbers from list of names
     namevalue = "' "+(typeName)+"\r'"
-    db = MySQLdb.connect(host='localhost',user='read',passwd='',db='test')
+    db = MySQLdb.connect(host='localhost',user='webbot',passwd='',db='planetary_interaction')
     cur = db.cursor()
     cur.execute("SELECT typeID FROM typeid WHERE typeNAME = ' " + typeName  + "\r';")
     output =  string.translate(str(cur.fetchone()),None,string.punctuation+string.ascii_letters)
@@ -23,7 +23,7 @@ def idsqlpull(typeName):
     return output
 
 def sqlpush(info):
-    db = MySQLdb.connect(host='localhost',user='gynax',passwd='',db='gynax')
+    db = MySQLdb.connect(host='localhost',user='webbot',passwd='',db='planetary_interaction')
     cur = db.cursor()
     cur.execute("DELETE FROM piprices WHERE typeID="+info[1]+";")
     db.commit()
@@ -34,7 +34,7 @@ def sqlpush(info):
 
 def evecentralpull(typeID):
     urlstart = "http://api.eve-central.com/api/marketstat?typeid="
-    urlend = "&usesystem=30002187"
+    urlend = "&usesystem=30000142"
     url=urlstart+str(typeID)+urlend
     s = urllib2.urlopen(url)
     contents = s.read()
@@ -67,10 +67,11 @@ def fullinfo(itemname):
     print itemname + " Updated"
 
 def fullupdate():
+    print "Starting item update"
     items = []
-    db = MySQLdb.connect(host='localhost',user='gynax',passwd='',db='gynax')
+    db = MySQLdb.connect(host='localhost',user='webbot',passwd='',db='planetary_interaction')
     cur = db.cursor()
-    cur.execute("SELECT name FROM items where doupdate=1;")
+    cur.execute("SELECT name FROM items;")
     selection = cur.fetchone()
     while selection != None:
         items.append(selection[0])
@@ -82,6 +83,5 @@ def fullupdate():
     print "Update complete"
 
 #fullinfo("Enriche Uranium")
-while 1==1:
-    fullupdate()
-    time.sleep(60)
+print "Test Test"
+fullupdate()
