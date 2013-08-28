@@ -3,7 +3,7 @@
 <body>
 
 <?php
-$con=mysqli_connect("localhost","gynax","","gynax");
+$con=mysqli_connect("localhost","webbot","","planetary_interaction");
 if (mysqli_connect_errno($con))
 {
 echo "Failed to connect to MySQL: " . mysqli_connect_error();
