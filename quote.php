@@ -5,7 +5,9 @@
 <?php
 echo '<div style="width:400px;float:left;">';
 $con=mysqli_connect("localhost","webbot","","planetary_interaction");
+//Connects to appropriate database
 $total = 0;
+//Creates a table by pulling from the GET sent by the first page and totaling prices that are in data
 echo "<table border = '1'>";
 echo "<tr>";
 echo "<td>Item Name</td><td>Quantity</td><td>Price</td><td>Value</td>";
@@ -17,6 +19,7 @@ $result = mysqli_query($con, "SELECT * FROM piprices WHERE typeNAME='" . $_GET["
 $row = mysqli_fetch_array($result);
 $value1 = $_GET["q1"]*$row['max']*0.9;
 echo '<td>' . $_GET["item1"] . '</td><td>' . $_GET["q1"] . '</td><td>' . $row['max']*0.9 . '</td><td>' . $value1 . "</td>";
+//Creates running total of value
 $total = $total + $value1;
 }
 echo "</tr>";
@@ -45,6 +48,7 @@ echo "</table>";
 echo '</div>';
 echo '<div style="float:left;">';
 $towers =array();
+//Creates list of towers to be used in later dropdown
 $result=mysqli_query($con,"SELECT * FROM towers");
 while($row = mysqli_fetch_array($result))
 {
@@ -55,6 +59,7 @@ array_push($towers, $row["name"]);
 sort($towers);
 if (1==1)
 {
+//Create form for user to enter location of items and notes
 echo '<table border="0">';
 echo '<form action="submitorder.php" method="post">';
 echo '<tr>';
