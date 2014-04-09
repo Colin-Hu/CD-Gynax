@@ -6,6 +6,7 @@ $code = 22805;
 $ordernoup="";
 if ($_POST["password"]==$code OR $_GET["update"]==1)
 {
+//First creates list of all characters and locations that have been used in the database
 $con=mysqli_connect("localhost","webbot","","planetary_interaction");
 $towers=array();
 $characters=array();
@@ -30,6 +31,7 @@ $row = mysqli_fetch_array($result);
 #echo $row["acceptdate"];
 if ($row["acceptdate"] <> "0000-00-00 00:00:00" AND $_POST["updateano" . $_POST["doupdate"][$i]] == "")
 {
+//Allows for refreshing of the page to accept orders
 $sql = "UPDATE orders SET acceptdate = 0 WHERE orderno=" . $_POST["doupdate"][$i];
 }
 else if ($row["acceptdate"] == "0000-00-00 00:00:00" AND $_POST["updateano" . $_POST["doupdate"][$i]] == "1")
@@ -41,6 +43,7 @@ else
 $sql = "";
 }
 mysqli_query($con, $sql);
+//First pulls all orders on file
 $result = mysqli_query($con, "SELECT completed FROM orders WHERE orderno=" . $_POST["doupdate"][$i]);
 $row = mysqli_fetch_array($result);
 #echo $row["completed"];
@@ -59,6 +62,7 @@ $sql = "";
 mysqli_query($con, $sql);
 }
 }
+//Create a filter through HTTP Get
 echo "Use the follwing filters to access records<br><br>";
 echo "<form action='records.php' method='get'>";
 echo "Character: ";
@@ -129,6 +133,7 @@ else
 $ordernoup= $ordernoup .  $runningno;
 #$runningtotal = $runningtotal + $row["qvalue"];
 echo "<tr><td></td><td></td><td></td><td></td><td></td><td>" . $runningtotal . "</td><td></td><td></td><td></td><td></td><td></td><td><center><input name ='updateano" . $runningno . "' type='checkbox' value = '1'";
+//Status checkboxes, if accepted or completed then the date should be non-zero
 if ($prevdate1<>"0000-00-00 00:00:00")
 {
 echo "checked";
