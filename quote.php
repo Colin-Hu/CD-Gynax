@@ -15,6 +15,7 @@ echo "</tr>";
 echo "<tr>";
 if ($_GET["q1"] > 0)
 {
+//NOTE: Now realize that GET can be tainted easily and so these SQL statements should be prepared as well
 $result = mysqli_query($con, "SELECT * FROM piprices WHERE typeNAME='" . $_GET["item1"] . "'");
 $row = mysqli_fetch_array($result);
 $value1 = $_GET["q1"]*$row['max']*0.9;
