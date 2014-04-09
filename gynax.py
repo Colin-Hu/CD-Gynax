@@ -23,6 +23,7 @@ def idsqlpull(typeName):
     return output
 
 def sqlpush(info):
+    #Pushes data into database while deleting old data
     db = MySQLdb.connect(host='localhost',user='webbot',passwd='',db='planetary_interaction')
     cur = db.cursor()
     cur.execute("DELETE FROM piprices WHERE typeID="+info[1]+";")
@@ -33,6 +34,7 @@ def sqlpush(info):
     return
 
 def evecentralpull(typeID):
+    #Parses api for info about a single item
     urlstart = "http://api.eve-central.com/api/marketstat?typeid="
     urlend = "&usesystem=30000142"
     url=urlstart+str(typeID)+urlend
@@ -43,6 +45,7 @@ def evecentralpull(typeID):
     file.close()
 
 def xmlparse(filename):
+    #Sifts through the downloaded xml file from api to pull out relevant data
     file = open(filename, 'r')
     contents = file.read()
     file.close()
@@ -55,6 +58,7 @@ def xmlparse(filename):
     return output
 
 def fullinfo(itemname):
+    #Updates info on a single item by calling previous functions
     info = []
     info.append(itemname)
     info.append(idsqlpull(info[0]))
@@ -67,6 +71,7 @@ def fullinfo(itemname):
     print itemname + " Updated"
 
 def fullupdate():
+    #Sifts through total item list and updates all
     print "Starting item update"
     items = []
     db = MySQLdb.connect(host='localhost',user='webbot',passwd='',db='planetary_interaction')
